@@ -1,4 +1,6 @@
-public class DefaultRangeFormatter {
+package numberrangesummarizer;
+
+public class DefaultRangeFormatter implements RangeFormatter {
     private final String rangeSymbol;
 
     public DefaultRangeFormatter(String rangeSymbol) {

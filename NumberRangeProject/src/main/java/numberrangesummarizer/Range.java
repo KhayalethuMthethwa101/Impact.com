@@ -1,3 +1,5 @@
+package numberrangesummarizer;
+
 public class Range {
     private final int start;
     private final int end;
