@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.699" tests="16" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.9" tests="16" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ZA"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
-    <property name="sun.java.command" value="C:\Users\khaya\AppData\Local\Temp\surefire16502702990219389299\surefirebooter-20250906000449498_3.jar C:\Users\khaya\AppData\Local\Temp\surefire16502702990219389299 2025-09-06T00-04-49_266-jvmRun1 surefire-20250906000449498_1tmp surefire_0-20250906000449498_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\khaya\AppData\Local\Temp\surefire16775583671902194450\surefirebooter-20250906084432041_3.jar C:\Users\khaya\AppData\Local\Temp\surefire16775583671902194450 2025-09-06T08-44-31_689-jvmRun1 surefire-20250906084432041_1tmp surefire_0-20250906084432041_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\khaya\OneDrive - University of Cape Town\Impact.com\NumberRangeProject\target\test-classes;C:\Users\khaya\OneDrive - University of Cape Town\Impact.com\NumberRangeProject\target\classes;C:\Users\khaya\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\khaya\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\khaya\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\khaya\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\khaya\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\khaya\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\khaya\AppData\Local\Temp\surefire16502702990219389299\surefirebooter-20250906000449498_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\khaya\AppData\Local\Temp\surefire16775583671902194450\surefirebooter-20250906084432041_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.1+11-39"/>
@@ -58,23 +58,23 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="testCollectWithDuplicates" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.05"/>
-  <testcase name="testCollectMultipleNumbers" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.001"/>
-  <testcase name="testSummarizeEmptyCollection" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.001"/>
-  <testcase name="testSummarizeLargeRangePerformance" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.424"/>
-  <testcase name="testCollectionEmptyString" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.003"/>
+  <testcase name="testCollectWithDuplicates" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.075"/>
+  <testcase name="testCollectMultipleNumbers" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.003"/>
+  <testcase name="testSummarizeEmptyCollection" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.003"/>
+  <testcase name="testSummarizeLargeRangePerformance" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.536"/>
+  <testcase name="testCollectionEmptyString" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.004"/>
   <testcase name="testSummarizeSingleNumber" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.002"/>
   <testcase name="testCollectSingleNumber" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.001"/>
-  <testcase name="testSummarizeWithDuplicates" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.001"/>
+  <testcase name="testSummarizeWithDuplicates" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.002"/>
   <testcase name="testCollectInvalidNumbers" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.002">
     <system-err><![CDATA[Invalid number format: abc
 ]]></system-err>
   </testcase>
-  <testcase name="testSummarizeNoConsecutiveNumbers" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.001"/>
-  <testcase name="testCollectWithSpaces" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.004"/>
+  <testcase name="testSummarizeNoConsecutiveNumbers" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.003"/>
+  <testcase name="testCollectWithSpaces" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.001"/>
   <testcase name="testSummarizeUnsortedInput" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.002"/>
-  <testcase name="testSummarizeMixedRanges" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.002"/>
-  <testcase name="testCollectLargeDataSetWithDuplicates" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.128"/>
-  <testcase name="testSummarizeAllConsecutive" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.005"/>
-  <testcase name="testSummarizeWithNegativeNumbers" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.004"/>
+  <testcase name="testSummarizeMixedRanges" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.001"/>
+  <testcase name="testCollectLargeDataSetWithDuplicates" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.155"/>
+  <testcase name="testSummarizeAllConsecutive" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.0"/>
+  <testcase name="testSummarizeWithNegativeNumbers" classname="numberrangesummarizer.NumberRangeSummerizerImplementationTest" time="0.0"/>
 </testsuite>
