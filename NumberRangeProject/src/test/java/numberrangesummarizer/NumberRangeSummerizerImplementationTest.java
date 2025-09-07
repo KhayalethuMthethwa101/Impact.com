@@ -32,6 +32,19 @@ import java.beans.Transient;
 
 public class NumberRangeSummerizerImplementationTest {
     private final NumberRangeSummarizerImplementation summarizer = new NumberRangeSummarizerImplementation("-", ",");
+    private final NumberRangeSummarizerImplementation summarizerDifferentDelimiter = new NumberRangeSummarizerImplementation("-", ";");
+
+    @Test
+    public void testCollection(){
+        Collection<Integer> result = summarizer.collect("1,2,3,5,7,8,9,10,12");
+        assertEquals(List.of(1,2,3,5,7,8,9,10,12), new ArrayList<>(result));
+    }
+
+    @Test
+    public void testCollectionWithDifferentDelimiter(){
+        Collection<Integer> result = summarizerDifferentDelimiter.collect("1;2;3;5;7;8;9;10;12");
+        assertEquals(List.of(1,2,3,5,7,8,9,10,12), new ArrayList<>(result));
+    }
 
     @Test
     public void testCollectionEmptyString(){
