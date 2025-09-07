@@ -3,10 +3,12 @@ package numberrangesummarizer;
 import java.util.*;
 
 public class NumberRangeSummarizerImplementation implements NumberRangeSummarizer {
-    private final RangeFormatter rangeFormatter;
+    private String rangeSeparator;
+    private String delimiter;
 
-    public NumberRangeSummarizerImplementation(RangeFormatter rangeFormatter) {
-        this.rangeFormatter = rangeFormatter;
+    public NumberRangeSummarizerImplementation(String rangeSeparator, String delimiter) {
+        this.rangeSeparator = rangeSeparator;
+        this.delimiter = delimiter;
     }
 
     @Override
@@ -16,7 +18,7 @@ public class NumberRangeSummarizerImplementation implements NumberRangeSummarize
             return numbers;
         }
 
-        String[] parts = input.split(",");
+        String[] parts = input.split(delimiter);
         for (String part : parts) {
             try {
                 numbers.add(Integer.parseInt(part.trim()));
@@ -32,28 +34,23 @@ public class NumberRangeSummarizerImplementation implements NumberRangeSummarize
         if (input == null || input.isEmpty()) {
             return "";
         }
-
-        TreeSet<Integer> numbersSet = new TreeSet<>(input);
-        List<Integer> numbers = new ArrayList<>(numbersSet);
-
+        // The assumption is that input is sorted and unique due to the collect() method
+        List<Integer> inputList = new ArrayList<>(input);
         List<String> ranges = new ArrayList<>();
-        int start = numbers.get(0);
-        int end = start;
+        Range currentRange = new Range(inputList.get(0), inputList.get(0), rangeSeparator);
 
-        for (int i = 1; i < numbers.size(); i++) {
-            int current = numbers.get(i);
-            if (current == end + 1) {
-                end = current;
+        for (int i = 1; i < inputList.size(); i++) {
+            int current = inputList.get(i);
+            if (current == currentRange.getEnd() + 1) {
+                currentRange.setEnd(current);
             } else {
-                ranges.add(formatRange(start, end));
-                start = end = current; 
+                ranges.add(currentRange.toString());
+                currentRange.reset(current, current); 
             }
         }
-        ranges.add(formatRange(start, end));
-
-        return String.join(", ", ranges);
-    }
-    private String formatRange(int start, int end) {
-        return start == end ? String.valueOf(start) : start + "-" + end;
+        ranges.add(currentRange.toString());
+        
+        //The assumption here, is that we join the ranges with a ", " separator, as per output in the instructions
+        return String.join(delimiter + " ", ranges);
     }
 }

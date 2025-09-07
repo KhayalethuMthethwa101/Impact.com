@@ -2,23 +2,23 @@ package numberrangesummarizer;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-import numberrangesummarizer.DefaultRangeFormatter;
 import numberrangesummarizer.NumberRangeSummarizerImplementation;
-import numberrangesummarizer.RangeFormatter;
 import java.util.*;
 import java.beans.Transient;
 
 /**
- * Test Narration:
+ * Assumptions:
+ * 1. Input numbers are provided as a comma-separated string. (There is an option to change this in the contruction of NumeberRangeSummarizerImplementation)
+ * 2. The Collect method handles sorting and removal of duplicates, thus some tests arwe for the Collect Method only.
  *
- * This test suite validates the behavior of the NumberRangeSummarizerImplementation class.
+ * This test suite validates the behavior of the methods in NumberRangeSummarizerImplementation class.
  * The following scenarios were considered:
  * 1. Empty input collection.
- * 2. Single number input.
- * 3. Multiple numbers, including unsorted sequences.
- * 4. Inputs with spaces.
- * 5. Invalid numbers (non-numeric input).
- * 6. Duplicate numbers.
+ * 2. Single number input. 
+ * 3. Multiple numbers, including unsorted sequences. (for Collect method only)
+ * 4. Inputs with spaces. (for Collect method only)
+ * 5. Invalid numbers (for Collect method only)
+ * 6. Duplicate numbers (for Collect method only)
  * 7. Negative numbers.
  * 8. Consecutive and non-consecutive numbers for range summarization.
  * 9. Large datasets to evaluate performance and scalability.
@@ -31,8 +31,7 @@ import java.beans.Transient;
 
 
 public class NumberRangeSummerizerImplementationTest {
-    private final RangeFormatter formatter = new DefaultRangeFormatter("-");
-    private final NumberRangeSummarizerImplementation summarizer = new NumberRangeSummarizerImplementation(formatter);
+    private final NumberRangeSummarizerImplementation summarizer = new NumberRangeSummarizerImplementation("-", ",");
 
     @Test
     public void testCollectionEmptyString(){
@@ -60,7 +59,6 @@ public class NumberRangeSummerizerImplementationTest {
     }
 
     @Test
-    //This is meant to test that the input can be converted into an ordered List of integers
     public void testCollectWithSpaces() {
         Collection<Integer> result = summarizer.collect(" 10 , 5 , 7 ");
         assertEquals(List.of(5,7,10), new ArrayList<>(result));
@@ -97,20 +95,8 @@ public class NumberRangeSummerizerImplementationTest {
     }
 
     @Test
-    public void testSummarizeWithDuplicates() {
-        String result = summarizer.summarizeCollection(List.of(1,2,2,3,5,5,5));
-        assertEquals("1-3, 5", result, "Duplicates should be collapsed");
-    }
-
-    @Test
     public void testSummarizeMixedRanges() {
         String result = summarizer.summarizeCollection(List.of(1,2,3,5,6,7,9,11,12));
-        assertEquals("1-3, 5-7, 9, 11-12", result);
-    }
-
-    @Test
-    public void testSummarizeUnsortedInput() {
-        String result = summarizer.summarizeCollection(List.of(12,11,9,7,6,5,3,2,1));
         assertEquals("1-3, 5-7, 9, 11-12", result);
     }
 

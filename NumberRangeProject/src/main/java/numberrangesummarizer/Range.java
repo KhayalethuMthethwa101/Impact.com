@@ -1,12 +1,14 @@
 package numberrangesummarizer;
 
 public class Range {
-    private final int start;
-    private final int end;
+    private int start;
+    private int end;
+    private final String separator;
 
-    public Range(int start, int end) {
+    public Range(int start, int end, String separator) {
         this.start = start;
         this.end = end;
+        this.separator = separator;
     }
 
     public int getStart() {
@@ -15,6 +17,23 @@ public class Range {
 
     public int getEnd() {
         return end;
+    }
+
+    public String getSeparator() {
+        return separator;
+    }
+
+    public void setEnd(int newEnd) {
+        end = newEnd;
+    }
+
+    public void setStart(int newStart) {
+        start = newStart;
+    }
+
+    public void reset(int newStart, int newEnd) {
+        this.start = newStart;
+        this.end = newEnd;
     }
 
     public boolean isSingle() {
@@ -26,7 +45,7 @@ public class Range {
         if (start == end) {
             return String.valueOf(start);
         } else {
-            return start + "-" + end;
+            return start + separator + end;
         }
     }
 }
